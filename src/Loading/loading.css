@@ -1,0 +1,12 @@
+.result.container {
+  flex: 1;
+}
+
+.result__image {
+  width: 50%;
+  margin-bottom: 32px;
+}
+
+.result__text {
+  font-size: 1.2rem;
+}

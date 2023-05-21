@@ -2,6 +2,7 @@ import { useAppContext } from "./App.provider";
 import { Preference } from "src/Preference";
 import { Demography } from "src/Demography";
 import { Guess } from "src/Guess";
+import { Loading } from "src/Loading";
 import { Result } from "src/Result";
 import "./app.css";
 
@@ -16,6 +17,8 @@ export const AppContainer = () => {
         return <Demography />;
       case "GUESS":
         return <Guess />;
+      case "LOADING":
+        return <Loading />;
       case "RESULT":
         return <Result />;
     }

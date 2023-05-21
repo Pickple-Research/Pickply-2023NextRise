@@ -1,0 +1,28 @@
+.demog.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px;
+}
+
+.demog.item {
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.selected {
+  background-color: #e0e0e0;
+}
+
+.invisible {
+  visibility: hidden;
+}

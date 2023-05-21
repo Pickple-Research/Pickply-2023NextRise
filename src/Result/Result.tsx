@@ -6,12 +6,49 @@ import "./result.css";
  * @author 현웅
  */
 export const Result = () => {
-  const { goNextStep, updateInput } = useAppContext();
+  const { goNextStep } = useAppContext();
 
   return (
-    <div>
-      <span>Result</span>
-      <button onClick={goNextStep}>다음 단계</button>
+    <div className="result container">
+      <div className="result__content container">
+        <Content />
+      </div>
+
+      <div className="result__button" onClick={goNextStep}>
+        처음으로 돌아가기
+      </div>
     </div>
   );
+};
+
+const Content = () => {
+  const { input } = useAppContext();
+
+  if (input.preference === "COKE") {
+    if (input.selection === "COKE") {
+      return (
+        <span>{`역시 근본은 코카콜라지!\n콜잘알 픽플러님 축하드립니다!`}</span>
+      );
+    }
+    if (input.selection === "PEPSI") {
+      return (
+        <span>{`부끄러워 하지 않아도 됩니다.\n펩시가 더 맛있는 걸 어쩌겠어요?`}</span>
+      );
+    }
+  }
+
+  if (input.preference === "PEPSI") {
+    if (input.selection === "COKE") {
+      return (
+        <span>{`부끄러워 하지 않아도 됩니다.\n코카콜라가 더 맛있는 걸 어쩌겠어요?`}</span>
+      );
+    }
+    if (input.selection === "PEPSI") {
+      return (
+        <span>{`역시 콜라는 펩시지~\n콜잘알 픽플러님 축하드립니다!`}</span>
+      );
+    }
+  }
+
+  return null;
 };
