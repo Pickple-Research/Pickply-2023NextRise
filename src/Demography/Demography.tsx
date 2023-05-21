@@ -6,7 +6,8 @@ import "./demography.css";
  * @author 현웅
  */
 export const Demography = () => {
-  const { goNextStep } = useAppContext();
+  const { goNextStep, updateInput } = useAppContext();
+
   return (
     <div>
       <span>Demography</span>

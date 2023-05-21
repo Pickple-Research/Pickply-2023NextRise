@@ -12,7 +12,7 @@ type Input = {
 export const AppContext = createContext({
   step: "PREFERENCE",
   goNextStep: () => {},
-  updateInput: (key: keyof Input, value: Input[keyof Input]) => {},
+  updateInput: (updatedInput: Partial<Input>) => {},
 });
 
 export const useAppContext = () => useContext(AppContext);
@@ -40,8 +40,8 @@ export const AppProvider = ({ children }: { children: any }) => {
     });
   };
 
-  const updateInput = (key: keyof Input, value: Input[keyof Input]) => {
-    setInput({ ...input, [key]: value });
+  const updateInput = (updatedInput: Partial<Input>) => {
+    setInput({ ...input, ...updatedInput });
   };
 
   const appContext = {

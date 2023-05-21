@@ -6,12 +6,33 @@ import "./preference.css";
  * @author 현웅
  */
 export const Preference = () => {
-  const { goNextStep } = useAppContext();
+  const { goNextStep, updateInput } = useAppContext();
+
+  const onPressCoke = () => {
+    goNextStep();
+    updateInput({ preference: "COKE" });
+  };
+  const onPressPepsi = () => {
+    goNextStep();
+    updateInput({ preference: "PEPSI" });
+  };
 
   return (
-    <div>
-      <span>Preference</span>
-      <button onClick={goNextStep}>다음 단계</button>
+    <div className="pref container">
+      {/* 제목 부분 */}
+      <div className="pref__title positioner">
+        <div className="pref__title container">
+          <span className="pref__title text">당신의 선택은?</span>
+        </div>
+      </div>
+
+      {/* 선택 부분 */}
+      <div className="pref__button" id="coke" onClick={onPressCoke}>
+        코카콜라
+      </div>
+      <div className="pref__button" id="pepsi" onClick={onPressPepsi}>
+        펩시
+      </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Preference } from "src/Preference";
 import { Demography } from "src/Demography";
 import { Guess } from "src/Guess";
 import { Result } from "src/Result";
+import "./app.css";
 
 export const AppContainer = () => {
   const { step } = useAppContext();

@@ -1,0 +1,47 @@
+.pref.container {
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+.pref__title.positioner {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pref__title.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  padding: 16px;
+  background-color: white;
+  border-radius: 200px;
+}
+
+.pref__title.text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.pref__button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#coke {
+  background-color: red;
+}
+#pepsi {
+  background-color: blue;
+}

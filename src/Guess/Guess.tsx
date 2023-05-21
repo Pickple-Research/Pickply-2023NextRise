@@ -6,7 +6,7 @@ import "./guess.css";
  * @author 현웅
  */
 export const Guess = () => {
-  const { goNextStep } = useAppContext();
+  const { goNextStep, updateInput } = useAppContext();
 
   return (
     <div>

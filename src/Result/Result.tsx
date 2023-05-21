@@ -6,7 +6,7 @@ import "./result.css";
  * @author 현웅
  */
 export const Result = () => {
-  const { goNextStep } = useAppContext();
+  const { goNextStep, updateInput } = useAppContext();
 
   return (
     <div>
