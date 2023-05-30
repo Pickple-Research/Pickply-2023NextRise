@@ -25,9 +25,9 @@ export const Demography = () => {
   const showNextStepButton = input.gender && input.ageGroup;
 
   return (
-    <div className="demog container">
+    <div className="global-container">
       {/* 성별 선택 */}
-      <div className="demog row">
+      <div className="global-row demog__row" style={{ flex: 3 }}>
         {genderButtonValues.map((value) => (
           <GenderButton
             key={value.text}
@@ -38,7 +38,7 @@ export const Demography = () => {
       </div>
 
       {/* 나이대 선택 */}
-      <div className="demog row">
+      <div className="global-row demog__row" style={{ flex: 1 }}>
         {ageGroupButtonValues.map((value) => (
           <AgeGroupButton
             key={value.text}
@@ -49,9 +49,9 @@ export const Demography = () => {
       </div>
 
       {/* 다음 단계 넘어가기 (성별, 나이대 선택 시에만 활성화) */}
-      <div className="demog row">
+      <div className="global-row demog__row" style={{ flex: 1 }}>
         <div
-          className={`demog item ${!showNextStepButton && "invisible"}`}
+          className={`demog__item ${!showNextStepButton && "invisible"}`}
           onClick={goNextStep}
         >{`나의 선호는 미각에 기반한걸까?\n확인해보기!`}</div>
       </div>
@@ -74,7 +74,7 @@ const GenderButton = ({
 
   return (
     <div
-      className={`demog item ${input.gender === gender && "selected"}`}
+      className={`demog__item ${input.gender === gender && "selected"}`}
       onClick={onClick}
     >
       {text}
@@ -97,7 +97,7 @@ const AgeGroupButton = ({
 
   return (
     <div
-      className={`demog item ${input.ageGroup === ageGroup && "selected"}`}
+      className={`demog__item ${input.ageGroup === ageGroup && "selected"}`}
       onClick={onClick}
     >
       {text}

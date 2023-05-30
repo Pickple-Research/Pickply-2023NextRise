@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useAppContext } from "src/App";
 import "./result.css";
 
@@ -8,9 +9,22 @@ import "./result.css";
 export const Result = () => {
   const { goNextStep } = useAppContext();
 
+  const handleKeyDown = () => goNextStep();
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
-    <div className="result container">
-      <div className="result__content container">
+    <div
+      className="global-container"
+      style={{ justifyContent: "center", alignItems: "center" }}
+    >
+      <div className="result__content">
         <Content />
       </div>
 

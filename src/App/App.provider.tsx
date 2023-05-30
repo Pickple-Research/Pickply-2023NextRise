@@ -1,11 +1,18 @@
 import { useContext, createContext, useState } from "react";
 
-type Step = "PREFERENCE" | "DEMOGRAPHY" | "GUESS" | "LOADING" | "RESULT";
+type Step =
+  | "PREFERENCE"
+  | "DEMOGRAPHY"
+  | "GUESS"
+  | "LOADING"
+  | "STANDBY"
+  | "RESULT";
 const allSteps: Step[] = [
   "PREFERENCE",
   "DEMOGRAPHY",
   "GUESS",
   "LOADING",
+  // "STANDBY",
   "RESULT",
 ];
 
@@ -20,6 +27,7 @@ type Input = {
 
 type AppContextType = {
   step: Step;
+  /** 다음 단계로 넘어갑니다. 만약 마지막 단계라면, 입력값을 초기화하고 처음 단계로 넘어갑니다. */
   goNextStep: () => void;
   input: Input;
   updateInput: (updatedInput: Partial<Input>) => void;
@@ -27,6 +35,7 @@ type AppContextType = {
 
 export const AppContext = createContext<AppContextType>({
   step: "PREFERENCE",
+
   goNextStep: () => {},
   input: {
     preference: undefined,

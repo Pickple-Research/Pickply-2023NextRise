@@ -10,11 +10,11 @@ export const Guess = () => {
   const { goNextStep, updateInput } = useAppContext();
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key.toUpperCase() === "C") {
+    if (e.key.toUpperCase() === "R") {
       updateInput({ selection: "COKE" });
       goNextStep();
     }
-    if (e.key.toUpperCase() === "P") {
+    if (e.key.toUpperCase() === "B") {
       updateInput({ selection: "PEPSI" });
       goNextStep();
     }
@@ -29,7 +29,10 @@ export const Guess = () => {
   }, []);
 
   return (
-    <div className="guess container">
+    <div
+      className="global-container"
+      style={{ justifyContent: "center", alignItems: "center" }}
+    >
       <img
         className="guess__image"
         style={{ width: "50%" }}

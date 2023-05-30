@@ -14,7 +14,10 @@ export const Loading = () => {
   }, []);
 
   return (
-    <div className="result container">
+    <div
+      className="global-container"
+      style={{ justifyContent: "center", alignItems: "center" }}
+    >
       <img
         className="result__image"
         src="https://media.tenor.com/TU_NPEczh6gAAAAd/nervous-waiting.gif"

@@ -1,19 +1,10 @@
-.demog.container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
+.demog__row {
   justify-content: space-around;
   align-items: center;
   padding: 24px;
 }
 
-.demog.item {
+.demog__item {
   padding: 16px;
   border: 1px solid black;
   border-radius: 8px;

@@ -1,12 +1,4 @@
-.result.container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.result__content.container {
+.result__content {
   font-size: 1.8rem;
   margin-bottom: 32px;
 }

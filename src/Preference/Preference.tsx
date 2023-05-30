@@ -18,7 +18,13 @@ export const Preference = () => {
   };
 
   return (
-    <div className="pref container">
+    <div
+      className="global-container"
+      style={{
+        position: "relative",
+        flexDirection: "row",
+      }}
+    >
       {/* 제목 부분 */}
       <div className="pref__title positioner">
         <div className="pref__title container">

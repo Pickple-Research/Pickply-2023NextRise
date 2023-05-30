@@ -1,0 +1,12 @@
+/* 페이지를 감싸는 div 에 사용하는 스타일. 별다른 스타일을 지정하지 없는 경우 flex-direction 은 column 입니다. */
+div.global-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 내부 element 들을 가로로 나열하기 위해 사용하는 div 에 사용하는 스타일 */
+div.global-row {
+  display: flex;
+  flex-direction: row;
+}

@@ -3,6 +3,7 @@ import { Preference } from "src/Preference";
 import { Demography } from "src/Demography";
 import { Guess } from "src/Guess";
 import { Loading } from "src/Loading";
+import { StandBy } from "src/StandBy";
 import { Result } from "src/Result";
 import "./app.css";
 
@@ -19,14 +20,15 @@ export const AppContainer = () => {
         return <Guess />;
       case "LOADING":
         return <Loading />;
+      case "STANDBY":
+        return <StandBy />;
       case "RESULT":
         return <Result />;
     }
-    return null;
   };
 
   return (
-    <div className="app_container">
+    <div className="global-container">
       <RenderStep />
     </div>
   );
