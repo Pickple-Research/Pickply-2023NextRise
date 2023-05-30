@@ -1,17 +1,67 @@
 .demog__row {
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   padding: 24px;
 }
 
-.demog__item {
+/* 성별 선택 버튼 */
+.demog__button.gender {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
   padding: 16px;
-  border: 1px solid black;
-  border-radius: 8px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.selected {
-  background-color: #e0e0e0;
+.demog__image.gender {
+  width: 264px;
+  height: 40%;
+}
+
+.selected.gender {
+  transition: all 0.3s ease-out;
+  transform: scale(1.2);
+}
+
+.unselected {
+  transition: all 0.3s ease-out;
+  transform: scale(0.8);
+}
+
+.selected#MALE {
+  filter: drop-shadow(0 0 4rem #61dafbaa);
+}
+
+.selected#FEMALE {
+  filter: drop-shadow(0 0 4rem #ff7691ec);
+}
+
+/* 나이대 선택 버튼 */
+.demog__button.ageGroup {
+  font-size: 1.2rem;
+  background-color: white;
+  padding: 24px;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.ageGroup.selected {
+  font-weight: bold;
+  transform: scale(1.4);
+}
+
+/* 테스트 시작 버튼 */
+.demog__button.start {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: rgb(63, 178, 255);
+  padding: 24px 48px;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .invisible {

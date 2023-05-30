@@ -1,4 +1,6 @@
 import { useAppContext } from "src/App";
+import MaleSymbol from "./Resource/male-symbol.png";
+import FemaleSymbol from "./Resource/female-symbol.png";
 import "./demography.css";
 
 /**
@@ -8,9 +10,12 @@ import "./demography.css";
 export const Demography = () => {
   const { goNextStep, input } = useAppContext();
 
-  const genderButtonValues: { text: string; gender: "MALE" | "FEMALE" }[] = [
-    { text: "남성", gender: "MALE" },
-    { text: "여성", gender: "FEMALE" },
+  const genderButtonValues: {
+    gender: "MALE" | "FEMALE";
+    src: string;
+  }[] = [
+    { gender: "MALE", src: MaleSymbol },
+    { gender: "FEMALE", src: FemaleSymbol },
   ];
 
   const ageGroupButtonValues: { text: string; ageGroup: string }[] = [
@@ -26,19 +31,17 @@ export const Demography = () => {
 
   return (
     <div className="global-container">
+      <div style={{ flex: 1 }}></div>
+
       {/* 성별 선택 */}
-      <div className="global-row demog__row" style={{ flex: 3 }}>
+      <div className="global-row demog__row" style={{ flex: 5, gap: 160 }}>
         {genderButtonValues.map((value) => (
-          <GenderButton
-            key={value.text}
-            text={value.text}
-            gender={value.gender}
-          />
+          <GenderButton key={value.gender} {...value} />
         ))}
       </div>
 
       {/* 나이대 선택 */}
-      <div className="global-row demog__row" style={{ flex: 1 }}>
+      <div className="global-row demog__row" style={{ flex: 3, gap: 64 }}>
         {ageGroupButtonValues.map((value) => (
           <AgeGroupButton
             key={value.text}
@@ -51,20 +54,24 @@ export const Demography = () => {
       {/* 다음 단계 넘어가기 (성별, 나이대 선택 시에만 활성화) */}
       <div className="global-row demog__row" style={{ flex: 1 }}>
         <div
-          className={`demog__item ${!showNextStepButton && "invisible"}`}
+          className={`demog__button start ${
+            !showNextStepButton && "invisible"
+          }`}
           onClick={goNextStep}
-        >{`나의 선호는 미각에 기반한걸까?\n확인해보기!`}</div>
+        >{`테스트 시작하기!`}</div>
       </div>
+
+      <div style={{ flex: 1 }}></div>
     </div>
   );
 };
 
 const GenderButton = ({
-  text,
   gender,
+  src,
 }: {
-  text: string;
   gender: "MALE" | "FEMALE";
+  src: string;
 }) => {
   const { input, updateInput } = useAppContext();
 
@@ -72,12 +79,18 @@ const GenderButton = ({
     updateInput({ gender });
   };
 
+  const className = () => {
+    if (!input.gender) return "";
+    return input.gender === gender ? "selected" : "unselected";
+  };
+
   return (
     <div
-      className={`demog__item ${input.gender === gender && "selected"}`}
+      id={gender}
+      className={`demog__button gender ${className()}`}
       onClick={onClick}
     >
-      {text}
+      <img className={`demog__image gender`} src={src} />
     </div>
   );
 };
@@ -97,7 +110,9 @@ const AgeGroupButton = ({
 
   return (
     <div
-      className={`demog__item ${input.ageGroup === ageGroup && "selected"}`}
+      className={`demog__button ageGroup ${
+        input.ageGroup === ageGroup && "selected"
+      }`}
       onClick={onClick}
     >
       {text}

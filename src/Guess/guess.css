@@ -1,8 +1,9 @@
 .guess__image {
   width: 50%;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
 }
 
 .guess__content {
   font-size: 1.8rem;
+  font-weight: 600;
 }

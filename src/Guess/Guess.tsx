@@ -37,7 +37,7 @@ export const Guess = () => {
         className="guess__image"
         style={{ width: "50%" }}
         src={
-          "https://www.shutterstock.com/image-photo/portrait-elegant-senior-sommelier-on-260nw-1793378884.jpg"
+          "https://st2.depositphotos.com/1468291/6867/i/600/depositphotos_68672715-stock-photo-couple-at-wine-tasting.jpg"
         }
       />
       <span className="guess__content">

@@ -1,3 +1,8 @@
+.pref__container {
+  background: linear-gradient(to right, red 36%, blue 64%);
+}
+
+/* 제목 부분 */
 .pref__title.positioner {
   position: absolute;
   top: 20px;
@@ -16,28 +21,48 @@
   padding: 16px;
   background-color: white;
   border-radius: 200px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.pref__title.text {
+.pref__title {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
 }
 
-.pref__button {
+/* 선택 영역 부분 */
+.pref__button.area {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
+  cursor: pointer;
 }
 
-#coke {
-  background-color: red;
+.pref__button.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-#pepsi {
-  background-color: blue;
+
+.pref__image {
+  width: 440px;
+  margin-bottom: 32px;
+}
+
+.pref__image#coke {
+  transform: rotate(-8deg);
+}
+
+.pref__image#pepsi {
+  transform: rotate(8deg);
+}
+
+.pref__button.text {
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
