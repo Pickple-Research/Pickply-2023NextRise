@@ -10,7 +10,7 @@ export const Loading = () => {
   const { goNextStep } = useAppContext();
 
   useEffect(() => {
-    setTimeout(goNextStep, 3200);
+    setTimeout(goNextStep, 2800);
   }, []);
 
   const images = [

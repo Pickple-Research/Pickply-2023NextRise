@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import axios from "axios";
 import { useAppContext } from "src/App";
 import "./guess.css";
 
@@ -7,14 +8,26 @@ import "./guess.css";
  * @author 현웅
  */
 export const Guess = () => {
-  const { goNextStep, updateInput } = useAppContext();
+  const { input, goNextStep, updateInput } = useAppContext();
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key.toUpperCase() === "R") {
+      axios.request({
+        method: "POST",
+        url: "https://api.pickply.com/marketing/nextrise",
+        headers: { "Acess-Control-Allow-Origin": "*" },
+        data: { ...input, selection: "COKE" },
+      });
       updateInput({ selection: "COKE" });
       goNextStep();
     }
     if (e.key.toUpperCase() === "B") {
+      axios.request({
+        method: "POST",
+        url: "https://api.pickply.com/marketing/nextrise",
+        headers: { "Acess-Control-Allow-Origin": "*" },
+        data: { ...input, selection: "PEPSI" },
+      });
       updateInput({ selection: "PEPSI" });
       goNextStep();
     }

@@ -36,20 +36,20 @@ export const Preference = () => {
 
       {/* 선택 부분 */}
       <div className="pref__button area" onClick={onPressCoke}>
+        <img id="coke" className="pref__image" src={CocaCola} />
         <div className="pref__button container">
-          <img className="pref__image" id="coke" src={CocaCola} />
-          <h1 className="pref__button text">
+          <span id="coke" className="pref__button text">
             Since 1886!
             <br />
             전통강자 근본의 코카콜라
-          </h1>
+          </span>
         </div>
       </div>
 
       <div className="pref__button area" onClick={onPressPepsi}>
+        <img id="pepsi" className="pref__image" src={Pepsi} />
         <div className="pref__button container">
-          <img className="pref__image" id="pepsi" src={Pepsi} />
-          <span className="pref__button text">
+          <span id="pepsi" className="pref__button text">
             코카콜라의 명성은 마케팅!
             <br />
             실용주의 펩시
