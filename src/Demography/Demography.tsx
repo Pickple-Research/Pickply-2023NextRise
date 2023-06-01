@@ -22,7 +22,7 @@ export const Demography = () => {
     { text: "10대", ageGroup: "TEEN" },
     { text: "20대", ageGroup: "TWENTY" },
     { text: "30대", ageGroup: "THIRTY" },
-    { text: "40대", ageGroup: "FOUTY" },
+    { text: "40대", ageGroup: "FOURTY" },
     { text: "50대", ageGroup: "FIFTY" },
     { text: "60대", ageGroup: "SIXTY" },
   ];
